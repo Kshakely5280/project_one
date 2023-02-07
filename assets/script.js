@@ -1,13 +1,7 @@
-$.ajax({
-    type: 'GET',
-    url: 'https://www.zillow.com/webservice/GetRegionChildren.htm',
-    data: {
-        'zws-id': '<Your Zillow Web Services ID>',
-        'state': '<Your state code>',
-        'city': '<Your city name>',
-        'childtype': 'neighborhood'
-    },
-    success: function (data) {
-        console.log(data);
-    }
-});
+//psuedo code
+
+// input city of choice
+    // capture input of city 
+
+// pull current weather & 5 day forecast
+// pull list of local brewery's 
