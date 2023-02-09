@@ -6,3 +6,11 @@
 .btn {
     background-color: #873e23;
 }
+
+body {
+    background-image: url("./images/katherine-conrad-QL3SaEwio_k-unsplash.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
