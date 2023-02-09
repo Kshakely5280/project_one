@@ -7,8 +7,12 @@ nextBtn.addEventListener ("click", function () {
 const cityName = textCity.value();
 console.log(cityName);
 console.log("hello");
+const response = fetch(apiUrl + cityName + '&per_page=3');
+const data = response.json();
+return data;
+
 // event.preventDefault();
-displayBreweries(cityName);
+// displayBreweries(cityName);
 
 });
 
