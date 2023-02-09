@@ -22,6 +22,7 @@ h1, h3 {
 
 .btn {
     background-color: peru;
+    border: 1px black;
     
 }
 .btn:hover {
