@@ -1,10 +1,24 @@
 const apiUrl = 'https://api.openbrewerydb.org/breweries?by_city=';
+const nextBtn = document.getElementById("btn")
+const textCity = document.getElementById("#search-addon")
 
-async function getBreweries(city) {
-  const response = await fetch(apiUrl + city + '&per_page=3');
+
+nextBtn.addEventListener ("click", function () {
+const cityName = textCity.value();
+console.log(cityName);
+console.log("hello");
+// event.preventDefault();
+displayBreweries(cityName);
+
+});
+
+
+async function getBreweries(cityName) {
+  const response = await fetch(apiUrl + cityName + '&per_page=3');
   const data = await response.json();
   return data;
 }
+
 
 
 //add event listener for the button
