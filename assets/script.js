@@ -6,7 +6,9 @@ async function getBreweries(city) {
   return data;
 }
 
-document.getElementById('output').innerHTML = lengthOfName;
+
+//add event listener for the button
+document.getElementById('user-city').value
 
 async function displayBreweries() {
   const city = prompt("Enter the city:");
