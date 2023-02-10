@@ -3,6 +3,12 @@ const apiUrl = 'https://api.openbrewerydb.org/breweries?by_city=';
 const searchBtn = document.querySelector("button");
 const searchInput = document.querySelector("input");
 
+// var item = localStorage.getItem("key");
+
+// // select the h5 element and set its text to the retrieved item
+// var address = document.querySelector("address");
+// address.textContent = item;
+
   searchBtn.addEventListener("click", function() {
     localStorage.setItem("city", searchInput.value);
     const city = localStorage.getItem("city");
@@ -12,11 +18,13 @@ const searchInput = document.querySelector("input");
       .then(data => {
         console.log(data.slice(0, 3));
         const brewskiTime = data.slice(0, 3)
-        for (let i = 0; i < data.list.length; i += 8) {
-          const Name = data.list[i].brewery.name;
-          const Address = data.list[i].brewery.street + data.list[i].brewery.state;
-          const Phone = data.list[i].brewery.phone;
-          const Website = data.list[i].brewery.website_url;
+        for (let i = 0; i < data.length; i ++) {
+          const Name = data[i].name;
+          const Address = data[i].street + data[i].state;
+          const Phone = data[i].phone;
+          const Website = data[i].website_url;
+          console.log(Name);
+          document.querySelector('.name-'+i).textContent = `Name: ${data.list[i].name}`
         }
         // Use the data to display the breweries in the selected city
       })
