@@ -1,10 +1,7 @@
 body {
     background: url(./images/christin-hume-08tX2fsuSLg-unsplash.jpg) center fixed; 
 }
-#header {
-    margin-bottom: 20rem;
-    margin-top: 2rem;
-}
+
 h1, h3 {
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
