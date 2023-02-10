@@ -4,11 +4,9 @@ const citySelection = document.querySelector('#user-city')
 const searchBtn = document.querySelector('#goBtn');
 
 
-
-
 searchBtn.addEventListener ("click", function(event){
     const fiveDayEl = document.getElementById('fiveDay')
-    document.location = `results.html?city=${citySelection.value}`
+    
     console.log(citySelection.value)
 
     
