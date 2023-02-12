@@ -18,19 +18,21 @@ function populateCard(brewery) {
   const cardWebsite = document.createElement("a")
   
   cardImg.src = "./assets/images/monica-di-loxley-pJLmctCUmW0-unsplash.jpg"
-  cardImg.width = "200"
-  cardImg.height = "150"
+
 
   const nameText = document.createTextNode(brewery.name)
-  const addressText = document.createTextNode(brewery.street + brewery.state)
+  const addressText = document.createTextNode(brewery.street + "," + brewery.state)
+  // make the address copy instantly from clicking on it
   const phoneText = document.createTextNode(brewery.phone)
+  //make the phone # show up with dashes
   const websiteText = document.createTextNode(brewery.website_url)
 
   console.log(brewery);
 
 cardCol.className = "col"
-card.className = "brewcards shadow-5 card"
+card.className = "brewcards card"
 cardName.className = "card-title"
+cardImg.className = "card-img-top"
 
 card.append(cardName)
 card.append(cardImg)
@@ -52,7 +54,9 @@ cardWebsite.append(websiteText)
     localStorage.setItem("city", searchInput.value);
     const city = localStorage.getItem("city");
     console.log("fetch");
-
+    
+    // let text = document.getElementById("text").innerText;
+  
     fetch(apiUrl + city)
       .then(response => response.json())
       .then(data => {
@@ -60,11 +64,11 @@ cardWebsite.append(websiteText)
         breweries.forEach((brewery, i) => {
           console.log(brewery);
           populateCard(brewery)
-
+          //clear previous
         });
       })
       .catch(error => console.error(error));
-  });
-};
-
-
+    });
+    //return;
+  };
+  
