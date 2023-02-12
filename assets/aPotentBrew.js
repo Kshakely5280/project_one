@@ -2,8 +2,8 @@ window.onload = function() {
   const apiUrl = 'https://api.openbrewerydb.org/breweries?by_city=';
   const searchBtn = document.querySelector("button");
   const searchInput = document.querySelector("input");
-  // const breweryCards = document.querySelectorAll(".shadow-");
-// 
+
+
 
 function populateCard(brewery) {
   const breweryResults = document.getElementById ("brewery-results")
@@ -12,10 +12,14 @@ function populateCard(brewery) {
   const card = document.createElement("div");
 
   const cardName = document.createElement("h5")
-  // const cardImg = document.createElement("img")
+  const cardImg = document.createElement("img")
   const cardAddress = document.createElement("p")
   const cardPhone = document.createElement("p")
   const cardWebsite = document.createElement("a")
+  
+  cardImg.src = "./assets/images/monica-di-loxley-pJLmctCUmW0-unsplash.jpg"
+  cardImg.width = "200"
+  cardImg.height = "150"
 
   const nameText = document.createTextNode(brewery.name)
   const addressText = document.createTextNode(brewery.street + brewery.state)
@@ -29,7 +33,7 @@ card.className = "brewcards shadow-5 card"
 cardName.className = "card-title"
 
 card.append(cardName)
-// card.append(cardImg)
+card.append(cardImg)
 card.append(cardAddress)
 card.append(cardPhone)
 card.append(cardWebsite)
@@ -62,6 +66,5 @@ cardWebsite.append(websiteText)
       .catch(error => console.error(error));
   });
 };
-
 
 
