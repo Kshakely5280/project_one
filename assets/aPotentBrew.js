@@ -46,7 +46,7 @@ window.onload = function() {
     cardCol.className = "col"
     card.className = "brewcards card"
     cardName.className = "card-title"
-    cardImg.className = "card-img-top"
+    cardImg.classList.add("img-top")
   
     card.append(cardName)
     card.append(cardImg)
@@ -70,7 +70,7 @@ searchBtn.addEventListener("click", function() {
     localStorage.setItem("city", searchInput.value);
     const city = localStorage.getItem("city");
     document.getElementById("brewery-results").innerHTML = "";
-
+    
     fetch(apiUrl + city)
     
     .then(response => response.json())
