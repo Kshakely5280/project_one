@@ -3,12 +3,9 @@ window.onload = function() {
   const searchBtn = document.querySelector("button");
   const searchInput = document.querySelector("input");
 
-
-// file names array // for each// 
-
 function populateCard(brewery) {
+
   const breweryResults = document.getElementById ("brewery-results")
-  
 
   const cardCol = document.createElement ("div")
   const card = document.createElement("div");
@@ -18,20 +15,13 @@ function populateCard(brewery) {
   const cardAddress = document.createElement("p")
   const cardPhone = document.createElement("p")
   const cardWebsite = document.createElement("a")
-  
 
-
-  cardImg.src = "./assets/images/brew1.jpg"
-
+  // cardImg.src = "./assets/images/brew1.jpg"
 
   const nameText = document.createTextNode(brewery.name ?? "")
   const addressText = document.createTextNode(  brewery.street ? brewery.street + "," + brewery.state : brewery.state ?? "")
-  // make the address copy instantly from clicking on it
   const phoneText = document.createTextNode(brewery.phone ?? "")
-  //make the phone # show up with dashes
   const websiteText = document.createTextNode(brewery.website_url ?? "")
-
-  console.log(brewery);
 
 cardCol.className = "col"
 card.className = "brewcards card"
@@ -48,17 +38,14 @@ cardCol.append(card)
 breweryResults.append(cardCol)
 
 cardName.append(nameText)
-// cardImg.append(img)
 cardPhone.append(addressText)
 cardAddress.append(phoneText)
 cardWebsite.append(websiteText)
 }
 searchBtn.addEventListener("click", function() {
+  
     localStorage.setItem("city", searchInput.value);
     const city = localStorage.getItem("city");
-    console.log("fetch");
-    
-    // let text = document.getElementById("text").innerText;
     document.getElementById("brewery-results").innerHTML = "";
     
     fetch(apiUrl + city)
@@ -67,7 +54,6 @@ searchBtn.addEventListener("click", function() {
     .then(data => {
       const breweries = data.slice(0, 3)
       breweries.forEach((brewery, i) => {
-        console.log(brewery);
         populateCard(brewery)
       });
     })
