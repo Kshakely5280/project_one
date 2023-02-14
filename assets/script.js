@@ -8,8 +8,7 @@ const searchBtn = document.querySelector("#goBtn");
 searchBtn.addEventListener("click", function (event) {
   const fiveDayEl = document.getElementById("fiveDay");
 
-  console.log(citySelection.value);
-  //prevents multiple weather searches from stacking on themselves
+
   fiveDayEl.innerHTML = "";
 
   fetch(
@@ -45,7 +44,7 @@ searchBtn.addEventListener("click", function (event) {
 
             let cardDivEl = document.createElement("div");
             cardDivEl.classList.add("card");
-            cardDivEl.style.width = "13rem";
+            cardDivEl.style.width = "14rem";
 
             let heading4El = document.createElement("h4");
             heading4El.classList.add("card-title", "p-2");
