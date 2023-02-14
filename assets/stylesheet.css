@@ -26,6 +26,7 @@ h1, h3 {
 .btn:hover {
     background-color: white;
 }
+
 #modal {
     display: none;
     position: fixed;
@@ -37,19 +38,28 @@ h1, h3 {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
   }
-.modal-content {
+
+  
+  .modal-content {
+
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 30%;
   }
-#modal-text {
+
+  
+  #modal-text {
+
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
   }
-#modal-close {
+
+  
+  #modal-close {
+
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
@@ -58,6 +68,7 @@ h1, h3 {
     cursor: pointer;
     width: 100%;
   }
+
 #modal-close:hover {
     background-color: #3e8e41;
   }
@@ -79,3 +90,8 @@ h1, h3 {
    margin-right: 23px;
 }
 
+
+  
+  #modal-close:hover {
+    background-color: #3e8e41;
+  }
