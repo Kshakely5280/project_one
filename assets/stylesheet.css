@@ -1,6 +1,9 @@
 body {
     background: url(./images/christin-hume-08tX2fsuSLg-unsplash.jpg) center fixed; 
+    max-width: 90%;
+    margin: 0 auto;
 }
+
 
 h1, h3 {
     color: white;
@@ -14,7 +17,6 @@ h1, h3 {
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 
 
 .btn {
@@ -53,7 +55,7 @@ h1, h3 {
   }
   
   #modal-close {
-    background-color: #4CAF50;
+    background-color: peru;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -65,3 +67,16 @@ h1, h3 {
   #modal-close:hover {
     background-color: #3e8e41;
   }
+  .card {
+    background-color: transparent;
+    color: white;
+    margin-top: 80px;
+    border: 2px solid peru;
+  }
+
+  .card-img-top {
+    width: 100%;
+    opacity: 1;
+  }
+
+ 
