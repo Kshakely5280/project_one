@@ -1,5 +1,3 @@
-
-
 window.onload = function() {
   const apiUrl = 'https://api.openbrewerydb.org/breweries?by_city=';
   const searchBtn = document.querySelector("button");
@@ -14,7 +12,7 @@ window.onload = function() {
       "brew4.jpg",
       "brew5.jpg"
     ];
-    
+
     const breweryResults = document.getElementById ("brewery-results")
   
     const cardCol = document.createElement("div")
@@ -36,17 +34,30 @@ window.onload = function() {
   
     const nameText = document.createTextNode(brewery.name ?? "")
     const addressText = document.createTextNode(brewery.street ? brewery.street + "," + brewery.state : brewery.state ?? "")
-    // make the address copy instantly from clicking on it
-    const phoneText = document.createTextNode(brewery.phone ?? "")
-    //make the phone # show up with dashes
+
+    const rawPhone = brewery.phone ?? "";
+    const formattedPhone = rawPhone.replace(
+      /(\d{3})(\d{3})(\d{4})/,
+      "$1-$2-$3"
+    );
+    const phoneText = document.createTextNode(formattedPhone ?? "");
+
     const websiteText = document.createTextNode(brewery.website_url ?? "")
+
+    cardWebsite.href = brewery.website_url ?? `${websiteText}`;
+    cardWebsite.target = "_blank";
+    if (cardWebsite.textContent === true) {
+      cardWebsite.textContent;
+    }
   
     console.log(brewery);
   
     cardCol.className = "col"
     card.className = "brewcards card"
     cardName.className = "card-title"
-    cardImg.classList.add("img-top")
+
+    cardImg.className = "img-top"
+
   
     card.append(cardName)
     card.append(cardImg)
@@ -63,7 +74,7 @@ window.onload = function() {
     cardAddress.append(phoneText)
     cardWebsite.append(websiteText)
   }
-  
+
   
 searchBtn.addEventListener("click", function() {
 
@@ -84,4 +95,3 @@ searchBtn.addEventListener("click", function() {
     });
 
   };
-  

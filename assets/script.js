@@ -48,7 +48,7 @@ searchBtn.addEventListener("click", function (event) {
 
             let heading4El = document.createElement("h4");
             heading4El.classList.add("card-title", "p-2");
-            heading4El.textContent = dayjs.unix(day.dt).format("MMM-D-YYYY");
+            heading4El.textContent = dayjs.unix(day.dt).format("dddd, MMMM D, YYYY");
             cardDivEl.append(heading4El);
 
             let imagesEl = document.createElement("img");
