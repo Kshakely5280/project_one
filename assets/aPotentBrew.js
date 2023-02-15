@@ -55,7 +55,7 @@ window.onload = function() {
     cardCol.className = "col"
     card.className = "brewcards card"
     cardName.className = "card-title"
-    cardImg.className = "card-img-top"
+    cardImg.className = "img-top"
   
     card.append(cardName)
     card.append(cardImg)

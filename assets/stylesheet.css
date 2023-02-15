@@ -37,7 +37,7 @@ h1, h3 {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-  }
+}
 
   
   .modal-content {
@@ -70,8 +70,9 @@ h1, h3 {
   }
 
 #modal-close:hover {
-    background-color: #3e8e41;
-  }
+    background-color: #3e8e41; 
+}
+
 .card {
     background-color: rgba(255, 255, 255, 0.8);
     color: peru;
@@ -83,14 +84,24 @@ h1, h3 {
     border: 2px solid peru;
     padding: 10px;
     border-radius: 50px;
-   }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
 .brewcards {
     background-color: whitesmoke;
     opacity: 1;
    margin-right: 23px;
+   height: 40vh;
 }
 
-
+.img-top {
+    width: 100%;
+    height: 25vh;
+}
   
   #modal-close:hover {
     background-color: #3e8e41;
