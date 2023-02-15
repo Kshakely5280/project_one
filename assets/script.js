@@ -5,12 +5,10 @@ const modalClose = document.getElementById("modal-close");
 const citySelection = document.querySelector("#user-city");
 const searchBtn = document.querySelector("#goBtn");
 
-
 searchBtn.addEventListener("click", function (event) {
   const fiveDayEl = document.getElementById("fiveDay");
 
-  console.log(citySelection.value);
-  //prevents multiple weather searches from stacking on themselves
+
   fiveDayEl.innerHTML = "";
 
   fetch(
@@ -30,7 +28,6 @@ searchBtn.addEventListener("click", function (event) {
       }
 
       event.preventDefault();
-      
 
       fetch(
         `https://api.openweathermap.org/data/2.5/forecast?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${apiKey}&units=imperial`
@@ -51,7 +48,7 @@ searchBtn.addEventListener("click", function (event) {
 
             let heading4El = document.createElement("h4");
             heading4El.classList.add("card-title", "p-2");
-            heading4El.textContent = dayjs.unix(day.dt).format("MMM-D-YYYY");
+            heading4El.textContent = dayjs.unix(day.dt).format("dddd, MMMM D, YYYY");
             cardDivEl.append(heading4El);
 
             let imagesEl = document.createElement("img");
@@ -88,10 +85,6 @@ searchBtn.addEventListener("click", function (event) {
 
             modalClose.addEventListener("click", function () {
               modal.style.display = "none";
-
-
-              
-            
             });
           }
         });
